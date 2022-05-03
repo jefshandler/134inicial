@@ -56,7 +56,7 @@ if __name__ == '__main__':
     result = potencia(n1, n2)
     print(f'O resultado a Potencia é: {result}')
 
-def teste_multiplica():
+def test_multiplica():
     n1 = 4
     n2 = 5
     resultado = 20
@@ -64,7 +64,7 @@ def teste_multiplica():
     assert resultado == result_obitido
 
 
-def teste_divisao():
+def test_divisao():
     n1 = 6
     n2 = 2
     esperado = 3
@@ -72,7 +72,7 @@ def teste_divisao():
     assert esperado == obtido
 
 
-def teste_soma():
+def test_soma():
     n1 = 45
     n2 = 5
     esperado = 50
@@ -80,7 +80,7 @@ def teste_soma():
     assert esperado == obtido
 
 
-def teste_subtracao():
+def test_subtracao():
     n1 = 45
     n2 = 5
     esperado = 40
@@ -88,7 +88,7 @@ def teste_subtracao():
     assert esperado == obtido
 
 
-def teste_potencia():
+def test_potencia():
     n1 = 4
     n2 = 4
     esperado = 256

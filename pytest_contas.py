@@ -15,7 +15,7 @@ lista_para_multiplicar = [
 @pytest.mark.parametrize('n1, n2, esperado', lista_para_multiplicar)
 
 
-def teste_multiplicar(n1, n2, esperado):
+def test_multiplicar(n1, n2, esperado):
     # as informaçoes vaoi vir da lista
     # configura
 

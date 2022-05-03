@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print(f'A Divisao: {resultado}')
 
 # primeiro teste unitario
-def teste_somar():
+def test_somar():
     #1 - Configura
     numero_a = 8
     numero_b = 7
@@ -55,7 +55,7 @@ def teste_somar():
     assert resutltado_obtido ==resultado_esperado
 
 # Segundo teste unitario
-def teste_subtrair():
+def test_subtrair():
     # 1 - Prepara / Configura
     # 1.1 - Dados de entrada / valores do seu teste /
     # se eu tiver um arquivo isso seria chamadao de massa de dados
@@ -73,7 +73,7 @@ def teste_subtrair():
     assert resutltado_obtido == resultado_esperado
 
 # Terceiro teste unitario
-def teste_multiplicar():
+def test_multiplicar():
     # 1 - Prepara / Configura
     # 1.1 - Dados de entrada / valores do seu teste /
     # se eu tiver um arquivo isso seria chamadao de massa de dados
@@ -91,7 +91,7 @@ def teste_multiplicar():
     assert resutltado_obtido == resultado_esperado
 
 # Terceiro teste unitario
-def teste_dividr():
+def test_dividr():
     # 1 - Prepara / Configura
     # 1.1 - Dados de entrada / valores do seu teste /
     # se eu tiver um arquivo isso seria chamadao de massa de dados
