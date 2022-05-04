@@ -12,6 +12,13 @@ def divisao(n1, n2):
         print(f'Numero nao pode ser zero')
 
 
+def dividir(n1, n2):
+    try:
+        return n1 / n2
+    except ZeroDivisionError:
+        return 'Não dividiras por zero'
+
+
 def soma(n1, n2):
     return n1 + n2
 
@@ -69,6 +76,14 @@ def test_divisao():
     n2 = 2
     esperado = 3
     obtido = divisao(n1, n2)
+    assert esperado == obtido
+
+
+def test_dividir_negativo():
+    n1 = 6
+    n2 = 0
+    esperado = 'Não dividiras por zero'
+    obtido = dividir(n1, n2)
     assert esperado == obtido
 
 
