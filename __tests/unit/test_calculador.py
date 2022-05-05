@@ -44,4 +44,4 @@ class TesteCalculador:
         obtido = potencia(n1, n2)
         assert esperado == obtido
         
-        #comentario pelo git
+        # comentario pelo git
