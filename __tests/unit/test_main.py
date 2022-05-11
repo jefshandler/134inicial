@@ -1,9 +1,26 @@
+import csv
+
 import pytest
 
 from main import somar, subtrair, multiplicar, dividir
 
 
-#class TesteCalc:
+def ler_csv(arquivo_csv):
+    dados_csv = []
+    try:
+        with open(arquivo_csv, newline='') as massa:
+            campos = csv.reader(massa, delimiter=',')
+            next(campos)
+            for linha in campos:
+                dados_csv.append(linha)
+        return dados_csv
+    except FileNotFoundError:
+        print(f'Arquivo não encontrado:{arquivo_csv}')
+    except Exception as fail:
+        print(f'Ocorreu uma falha na leitura do arquivo!{fail}')
+
+
+# class TesteCalc:
 
 
 # Segundo teste unitario
@@ -24,6 +41,7 @@ def test_subtrair(self):
     # 3 - Valida /Checa
     assert resutltado_obtido == resultado_esperado
 
+
 # Terceiro teste unitario
 def test_multiplicar(self):
     # 1 - Prepara / Configura
@@ -41,6 +59,7 @@ def test_multiplicar(self):
 
     # 3 - Valida /Checa
     assert resutltado_obtido == resultado_esperado
+
 
 # Terceiro teste unitario
 def test_dividr(self):
@@ -98,9 +117,8 @@ lista_de_valores = [
 
 ]
 
+
 @pytest.mark.parametrize('n1, n2, esperado', lista_de_valores)
-
-
 def test_somar_leitura_lista(n1, n2, esperado):
     # 1 - Configura
 
@@ -111,3 +129,35 @@ def test_somar_leitura_lista(n1, n2, esperado):
 
     # 3 - Valida
     assert esperado == obtido
+
+
+@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', ler_csv('F:\\projetoPython\\134inicial\\vendors\\csv\\massa_teste_somar_positivo.csv'))
+def test_somar_leitura_csv(numero_a, numero_b, resultado_esperado):
+    # 1 - Configura
+
+    # resultado_esperado = 15
+
+    # 2 - Executa
+    obtido = somar(int(numero_a), int(numero_b))
+
+    # 3 - Valida
+    assert obtido ==int(resultado_esperado)
+
+
+@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado',ler_csv('F:\\projetoPython\\134inicial\\vendors\\csv\\massa_teste_subtrair_positivo.csv'))
+def test_subtrair_leitura_csv(numero_a, numero_b, resultado_esperado):
+    # 1 - Prepara / Configura
+    # 1.1 - Dados de entrada / valores do seu teste /
+    # se eu tiver um arquivo isso seria chamadao de massa de dados
+    # (quando eu tenho uma planilha com informacao e resultado o nome e massa de teste
+    # numero_a = 100
+    # numero_b = 50
+
+    # 1.2 - Resultados Esperados
+    # resultado_esperado = 50
+
+    # 2 - Executa
+    obtido = subtrair(int(numero_a), int(numero_b))
+
+    # 3 - Valida /Checa
+    assert obtido == int(resultado_esperado)
